@@ -32,7 +32,7 @@ img{
   width: 200px;
 }
 
-main{
+.game{
   display: flex;
   flex-direction: column;
 }
