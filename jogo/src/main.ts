@@ -23,3 +23,15 @@ percorrerEsorteia()
 
 const botao = document.querySelector("button")
 const p = document.querySelector("p")
+const input = document.querySelector("input")?.value
+
+const percorrerArray = () => {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
+}
+
+botao?.addEventListener("click", () => {
+  
+})
+
