@@ -35,8 +35,10 @@ const input = document.querySelector("input") as HTMLInputElement;
 
 const percorrerArray = () => {
   const meuInputValorString: string = input.value;
+  console.log(meuInputValorString);
+  
   for (let i = 0; i < array.length; i++) {
-    if (meuInputValorString === array[i]) {
+    if (meuInputValorString.includes(array[i])) {
       alert(`valor existe`);
     } else {
       alert(`nao existe`);
