@@ -24,20 +24,27 @@ const percorrerEsorteia = () => {
   const sorteio = chaves[Math.floor(Math.random() * chaves.length)];
   const obter = meuObjeto[sorteio];
   array.push(obter)
+  console.log(array);
+  
 };
 percorrerEsorteia()
 
-const botao = document.querySelector("button")
-const p = document.querySelector("p")
-const input = document.querySelector("input")?.value
+const botao = document.querySelector("button");
+const p = document.querySelector("p");
+const input = document.querySelector("input") as HTMLInputElement;
 
 const percorrerArray = () => {
+  const meuInputValorString: string = input.value;
   for (let i = 0; i < array.length; i++) {
-    console.log(array[i]);
+    if (meuInputValorString === array[i]) {
+      alert(`valor existe`);
+    } else {
+      alert(`nao existe`);
+    }
   }
-}
+};
 
 botao?.addEventListener("click", () => {
-  
-})
+  percorrerArray();
+});
 
