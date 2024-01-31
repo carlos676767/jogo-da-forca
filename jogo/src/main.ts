@@ -3,6 +3,9 @@ type Palavras = {
   palavra1: string;
   palavra2: string;
   palavra3: string;
+  palavra4: string;
+  palavra5: string;
+  palavra6: string;
   [key: string]: string;
 };
 
@@ -10,6 +13,9 @@ const meuObjeto: Palavras = {
   palavra1: "banana",
   palavra2: "uva",
   palavra3: "abacate",
+  palavra4: "arroz",
+  palavra5: "ovo",
+  palavra6: "maca",
 };
 
 const array: string[] = []
@@ -32,6 +38,6 @@ const percorrerArray = () => {
 }
 
 botao?.addEventListener("click", () => {
-  
+
 })
 
