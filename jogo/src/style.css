@@ -27,3 +27,12 @@ body {
   font-size: 18px;
   color: red;
 }
+
+img{
+  width: 200px;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+}
