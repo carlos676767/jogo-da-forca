@@ -18,14 +18,13 @@ const meuObjeto: Palavras = {
   palavra6: "maca",
 };
 
-const array: string[] = []
+let array: string 
 const percorrerEsorteia = () => {
   const chaves = Object.keys(meuObjeto);
   const sorteio = chaves[Math.floor(Math.random() * chaves.length)];
   const obter = meuObjeto[sorteio];
-  array.push(obter)
+  array = obter
   console.log(array);
-  
 };
 percorrerEsorteia()
 
