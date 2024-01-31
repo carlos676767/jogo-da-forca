@@ -23,6 +23,3 @@ percorrerEsorteia()
 
 const botao = document.querySelector("button")
 const p = document.querySelector("p")
-
-
-
