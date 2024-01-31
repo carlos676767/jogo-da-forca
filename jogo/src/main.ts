@@ -38,6 +38,6 @@ const percorrerArray = () => {
 }
 
 botao?.addEventListener("click", () => {
-
+  
 })
 
