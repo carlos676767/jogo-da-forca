@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#game-container {
+  text-align: center;
+}
+
+#word-display {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+#letter-input {
+  margin-top: 10px;
+  font-size: 18px;
+  padding: 5px;
+}
+
+#message {
+  margin-top: 10px;
+  font-size: 18px;
+  color: red;
+}
