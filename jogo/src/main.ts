@@ -28,12 +28,24 @@ const percorrerEsorteia = () => {
 };
 percorrerEsorteia()
 
-const array = receberValor.split("")
+const array = receberValor.split("").join(``)
 console.log(array);
+let texto = document.querySelector("p") as HTMLParagraphElement;
 
+const DicaAoUsuario = () => {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes(`maca`)) {
+      texto.textContent = ``
+      console.log(`isto e uma maca`);
+
+      
+    }
+  }
+}
+
+DicaAoUsuario()
 
 const botao = document.querySelector("button");
-const p = document.querySelector("p");
 const input = document.querySelector("input") as HTMLInputElement
 
 const percorrerArray = () => {
@@ -53,11 +65,9 @@ const percorrerArray = () => {
 
 input.addEventListener("input", () => {
   percorrerArray()
+
 });
 
 
-// da para eu pegar o numero de elementos e criar os p de acordo com  valor.
-for (let i = 0; i < 3; i++) {
-  const test = document.createComment(`p`).textContent = `ola`
-  console.log(test)
-}
+
+
