@@ -34,22 +34,21 @@ console.log(array);
 
 const botao = document.querySelector("button");
 const p = document.querySelector("p");
-const input = document.querySelector("input") as HTMLInputElement;
+const input = document.querySelector("input") as HTMLInputElement
 
 const percorrerArray = () => {
   const meuInputValorString: string = input.value;
-  console.log(meuInputValorString);
-  
-  for (let i = 0; i < receberValor.length; i++) {
-    if (meuInputValorString.includes(receberValor[i])) {
-      alert(`valor existe`);
-    } else {
-      alert(`nao existe`);
-    }
+  let valorExiste = false
+  for (let i = 0; i < array.length; i++) {
+    if (meuInputValorString.includes(array[i])) {
+      valorExiste = true
+      console.log(`Valor existe`);
+      continue
+    } 
   }
 };
 
-botao?.addEventListener("click", () => {
-  percorrerArray();
-});
 
+input.addEventListener("input", () => {
+  percorrerArray()
+});

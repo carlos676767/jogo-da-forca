@@ -36,3 +36,7 @@ img{
   display: flex;
   flex-direction: column;
 }
+
+.img{
+  display: none;
+}
