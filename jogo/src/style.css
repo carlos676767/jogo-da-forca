@@ -30,6 +30,7 @@ body {
 
 img{
   width: 200px;
+  display: block;
 }
 
 .game{

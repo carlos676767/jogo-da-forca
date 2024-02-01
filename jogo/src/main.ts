@@ -45,7 +45,7 @@ const percorrerArray = () => {
       console.log(`Valor existe`);
       break
     }else{
-      console.log(`nao existe`);
+      console.log(`naO EXISTE`);
     }
   }
 };
@@ -54,3 +54,10 @@ const percorrerArray = () => {
 input.addEventListener("input", () => {
   percorrerArray()
 });
+
+
+// da para eu pegar o numero de elementos e criar os p de acordo com  valor.
+for (let i = 0; i < 3; i++) {
+  const test = document.createComment(`p`).textContent = `ola`
+  console.log(test)
+}
