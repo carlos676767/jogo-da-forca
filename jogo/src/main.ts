@@ -43,8 +43,10 @@ const percorrerArray = () => {
     if (meuInputValorString.includes(array[i])) {
       valorExiste = true
       console.log(`Valor existe`);
-      continue
-    } 
+      break
+    }else{
+      console.log(`nao existe`);
+    }
   }
 };
 
