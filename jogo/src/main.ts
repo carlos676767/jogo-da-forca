@@ -28,25 +28,32 @@ const percorrerEsorteia = () => {
 };
 percorrerEsorteia()
 
-const array = receberValor.split("").join(``)
+const array = receberValor.split("");
 console.log(array);
 let texto = document.querySelector("p") as HTMLParagraphElement;
 
 const DicaAoUsuario = () => {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].includes(`maca`)) {
-      texto.textContent = ``
-      console.log(`isto e uma maca`);
-
-      
-    }
+  const copiarArray = array.slice().join("");
+  if (copiarArray.includes("banana")) {
+    texto.textContent = "Fruta amarela";
+  } else if (copiarArray.includes("uva")) {
+    texto.textContent = "E roxa(o)";
+  } else if (copiarArray.includes("abacate")) {
+    texto.textContent = "E algo verde que se come";
+  } else if (copiarArray.includes("arroz")) {
+    texto.textContent = "E um grao";
+  } else if (copiarArray.includes("ovo")) {
+    texto.textContent = "Redondo e cabe na boca";
+  } else if (copiarArray.includes("maca")) {
+    texto.textContent = "e vermelho";
   }
-}
+};
 
-DicaAoUsuario()
+DicaAoUsuario();
 
 const botao = document.querySelector("button");
 const input = document.querySelector("input") as HTMLInputElement
+const imagem = document.querySelectorAll(`img`)
 
 const percorrerArray = () => {
   const meuInputValorString: string = input.value;
@@ -57,7 +64,11 @@ const percorrerArray = () => {
       console.log(`Valor existe`);
       break
     }else{
-      console.log(`naO EXISTE`);
+      if (imagem[0].style.display === `block`) {
+        console.log(`errou`);
+        
+        imagem[0].style.display = `none`
+      }
     }
   }
 };
@@ -67,7 +78,3 @@ input.addEventListener("input", () => {
   percorrerArray()
 
 });
-
-
-
-
