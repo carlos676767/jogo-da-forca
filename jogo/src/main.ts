@@ -64,10 +64,12 @@ const percorrerArray = () => {
       console.log(`Valor existe`);
       break
     }else{
-      if (imagem[0].style.display === `block`) {
-        console.log(`errou`);
-        
+      if (!valorExiste) {
+       if (imagem[0].style.display === `block`) {
         imagem[0].style.display = `none`
+       }else if (imagem[0].style.display === `none`) {
+        imagem[1].style.display = `block`
+       }
       }
     }
   }
