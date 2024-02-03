@@ -51,15 +51,13 @@ const DicaAoUsuario = () => {
 
 DicaAoUsuario();
 
-
 const botao = document.querySelector("button");
 const input = document.querySelector("input") as HTMLInputElement;
 const img = document.querySelectorAll(`img`);
-
-const atualizarImagensForca = () => {
-  let contador = 0;
+let contador = 0;
+let valorExiste = false;
+const verificarValoreExistes = () => {
   const meuInputValorString = input.value;
-  let valorExiste = false;
   for (let j = 0; j < array.length; j++) {
     if (meuInputValorString.includes(array[j])) {
       console.log(`o valor existe`);
@@ -67,11 +65,29 @@ const atualizarImagensForca = () => {
       break;
     }
   }
+  atualizarContadorImagens()
+  
+};
 
+const aparecerImagem1 = () => {
+  img[0].style.display = "block"
+}
+
+const resetarImagens = () => {
+   for (let j = 2; j < img.length; j++) {
+    img[j].style.display = "none"
+    aparecerImagem1()
+    console.log(img[j]);
+   }
+}
+
+
+
+const atualizarContadorImagens = () => {
   if (!valorExiste) {
     ++contador;
+    console.log(contador);
   }
-
   if (contador == 1) {
     img[0].style.display = "none";
     img[1].style.display = "block";
@@ -91,9 +107,10 @@ const atualizarImagensForca = () => {
     img[5].style.display = "none";
     img[6].style.display = "block";
     alert(`voce errou tudo !`);
+    resetarImagens()
   }
 };
 
 botao?.addEventListener("click", () => {
-  atualizarImagensForca();
+  verificarValoreExistes();
 });
