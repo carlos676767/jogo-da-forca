@@ -51,32 +51,37 @@ const DicaAoUsuario = () => {
 
 DicaAoUsuario();
 
-const botao = document.querySelector("button");
-const input = document.querySelector("input") as HTMLInputElement
-const imagem = document.querySelectorAll(`img`)
 
-const percorrerArray = () => {
-  const meuInputValorString: string = input.value;
-  let valorExiste = false
-  for (let i = 0; i < array.length; i++) {
-    if (meuInputValorString.includes(array[i])) {
-      valorExiste = true
-      console.log(`Valor existe`);
-      break
-    }else{
-      if (!valorExiste) {
-       if (imagem[0].style.display === `block`) {
-        imagem[0].style.display = `none`
-       }else if (imagem[0].style.display === `none`) {
-        imagem[1].style.display = `block`
-       }
-      }
+
+const botao = document.querySelector("button");
+const input = document.querySelector("input") as HTMLInputElement;
+const img = document.querySelectorAll(`img`)
+
+//entrada
+//processamento
+//controle
+//saida
+
+
+
+const atualizarImagensForca = () => {
+  const meuInputValorString = input.value;
+  let valorExiste = false;
+  for (let j = 0; j < array.length; j++) {
+    if (meuInputValorString.includes(array[j])) {
+      console.log(`o valor existe`);
+      valorExiste = true;
+      break;
     }
+  }
+
+  if(!valorExiste) {
+    img[0].style.display = `none`;
+    img[1].style.display = `block`;
   }
 };
 
 
-input.addEventListener("input", () => {
-  percorrerArray()
-
-});
+botao?.addEventListener("click", () => {
+  atualizarImagensForca()
+})
