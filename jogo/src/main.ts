@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2';
 type Palavras = {
   palavra1: string;
   palavra2: string;
@@ -85,6 +85,22 @@ const resetarContador = () => {
   contador = 0
 }
 
+const mensagemPerdeu = () => {
+  Swal.fire({
+    title: "Custom width, padding, color, background.",
+    width: 600,
+    padding: "3em",
+    color: "#716add",
+    background: "#fff url(/images/trees.png)",
+    backdrop: `
+      rgba(0,0,123,0.4)
+      url("/images/nyan-cat.gif")
+      left top
+      no-repeat
+    `
+  });
+}
+
 const atualizarContadorImagens = () => {
   if (!valorExiste) {
     ++contador;
@@ -109,7 +125,7 @@ const atualizarContadorImagens = () => {
   } else if (contador === 6) {
     img[5].style.display = "none";
     img[6].style.display = "block";
-    alert(`voce errou tudo !`);
+    mensagemPerdeu()
     resetarImagens()
     resetarContador()
   }
