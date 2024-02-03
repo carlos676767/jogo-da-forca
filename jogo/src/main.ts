@@ -81,13 +81,15 @@ const resetarImagens = () => {
    }
 }
 
-
+const resetarContador = () => 
 
 const atualizarContadorImagens = () => {
   if (!valorExiste) {
     ++contador;
     console.log(contador);
   }
+
+
   if (contador == 1) {
     img[0].style.display = "none";
     img[1].style.display = "block";
