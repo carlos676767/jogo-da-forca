@@ -81,14 +81,15 @@ const resetarImagens = () => {
    }
 }
 
-const resetarContador = () => 
+const resetarContador = () => {
+  contador = 0
+}
 
 const atualizarContadorImagens = () => {
   if (!valorExiste) {
     ++contador;
     console.log(contador);
   }
-
 
   if (contador == 1) {
     img[0].style.display = "none";
@@ -110,8 +111,10 @@ const atualizarContadorImagens = () => {
     img[6].style.display = "block";
     alert(`voce errou tudo !`);
     resetarImagens()
+    resetarContador()
   }
 };
+
 
 botao?.addEventListener("click", () => {
   verificarValoreExistes();
