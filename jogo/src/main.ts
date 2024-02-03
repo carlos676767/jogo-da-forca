@@ -52,19 +52,12 @@ const DicaAoUsuario = () => {
 DicaAoUsuario();
 
 
-
 const botao = document.querySelector("button");
 const input = document.querySelector("input") as HTMLInputElement;
-const img = document.querySelectorAll(`img`)
-
-//entrada
-//processamento
-//controle
-//saida
-
-
+const img = document.querySelectorAll(`img`);
 
 const atualizarImagensForca = () => {
+  let contador = 0;
   const meuInputValorString = input.value;
   let valorExiste = false;
   for (let j = 0; j < array.length; j++) {
@@ -75,13 +68,32 @@ const atualizarImagensForca = () => {
     }
   }
 
-  if(!valorExiste) {
-    img[0].style.display = `none`;
-    img[1].style.display = `block`;
+  if (!valorExiste) {
+    ++contador;
+  }
+
+  if (contador == 1) {
+    img[0].style.display = "none";
+    img[1].style.display = "block";
+  } else if (contador == 2) {
+    img[1].style.display = "none";
+    img[2].style.display = "block";
+  } else if (contador == 3) {
+    img[2].style.display = "none";
+    img[3].style.display = "block";
+  } else if (contador == 4) {
+    img[3].style.display = "none";
+    img[4].style.display = "block";
+  } else if (contador == 5) {
+    img[4].style.display = "none";
+    img[5].style.display = "block";
+  } else if (contador === 6) {
+    img[5].style.display = "none";
+    img[6].style.display = "block";
+    alert(`voce errou tudo !`);
   }
 };
 
-
 botao?.addEventListener("click", () => {
-  atualizarImagensForca()
-})
+  atualizarImagensForca();
+});
