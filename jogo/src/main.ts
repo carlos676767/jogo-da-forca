@@ -24,9 +24,9 @@ const percorrerEsorteia = () => {
   const chaves = Object.keys(meuObjeto);
   const sorteio = chaves[Math.floor(Math.random() * chaves.length)];
   const obter = meuObjeto[sorteio];
-  receberValor = obter
+  receberValor = obter;
 };
-percorrerEsorteia()
+percorrerEsorteia();
 
 const array = receberValor.split("");
 console.log(array);
