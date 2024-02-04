@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2';
+
 type Palavras = {
   palavra1: string;
   palavra2: string;
@@ -35,17 +36,17 @@ let texto = document.querySelector("p") as HTMLParagraphElement;
 const DicaAoUsuario = () => {
   const copiarArray = array.slice().join("");
   if (copiarArray.includes("banana")) {
-    texto.textContent = "Fruta amarela";
+    texto.textContent = "DICA; Fruta amarela";
   } else if (copiarArray.includes("uva")) {
-    texto.textContent = "E roxa(o)";
+    texto.textContent = "DICA; E roxa(o)";
   } else if (copiarArray.includes("abacate")) {
-    texto.textContent = "E algo verde que se come";
+    texto.textContent = "DICA;E algo verde que se come";
   } else if (copiarArray.includes("arroz")) {
-    texto.textContent = "E um grao";
+    texto.textContent = "DICA; E um grao";
   } else if (copiarArray.includes("ovo")) {
-    texto.textContent = "Redondo e cabe na boca";
+    texto.textContent = "DICA; Redondo e cabe na boca";
   } else if (copiarArray.includes("maca")) {
-    texto.textContent = "e vermelho";
+    texto.textContent = "DICA; e vermelho";
   }
 };
 
@@ -73,6 +74,7 @@ const aparecerImagem1 = () => {
   img[0].style.display = "block"
 }
 
+
 const resetarImagens = () => {
    for (let j = 2; j < img.length; j++) {
     img[j].style.display = "none"
@@ -87,18 +89,11 @@ const resetarContador = () => {
 
 const mensagemPerdeu = () => {
   Swal.fire({
-    title: "Custom width, padding, color, background.",
-    width: 600,
-    padding: "3em",
-    color: "#716add",
-    background: "#fff url(/images/trees.png)",
-    backdrop: `
-      rgba(0,0,123,0.4)
-      url("/images/nyan-cat.gif")
-      left top
-      no-repeat
-    `
+    title: "Você consegue fazer <br> melhor 😞",
+    text: "Tente novamente",
   });
+  
+  
 }
 
 const atualizarContadorImagens = () => {
@@ -135,3 +130,4 @@ const atualizarContadorImagens = () => {
 botao?.addEventListener("click", () => {
   verificarValoreExistes();
 });
+
