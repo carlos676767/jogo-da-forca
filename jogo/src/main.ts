@@ -102,27 +102,36 @@ const atualizarContadorImagens = () => {
     console.log(contador);
   }
 
-  if (contador == 1) {
-    img[0].style.display = "none";
-    img[1].style.display = "block";
-  } else if (contador == 2) {
-    img[1].style.display = "none";
-    img[2].style.display = "block";
-  } else if (contador == 3) {
-    img[2].style.display = "none";
-    img[3].style.display = "block";
-  } else if (contador == 4) {
-    img[3].style.display = "none";
-    img[4].style.display = "block";
-  } else if (contador == 5) {
-    img[4].style.display = "none";
-    img[5].style.display = "block";
-  } else if (contador === 6) {
-    img[5].style.display = "none";
-    img[6].style.display = "block";
-    mensagemPerdeu()
-    resetarImagens()
-    resetarContador()
+  switch (contador) {
+    case 1:
+      img[0].style.display = "none";
+      img[1].style.display = "block";
+      break;
+    case 2:
+      img[1].style.display = "none";
+      img[2].style.display = "block";
+      break;
+    case 3:
+      img[2].style.display = "none";
+      img[3].style.display = "block";
+      break;
+    case 4:
+      img[3].style.display = "none";
+      img[4].style.display = "block";
+      break;
+    case 5:
+      img[4].style.display = "none";
+      img[5].style.display = "block";
+      break;
+    case 6:
+      img[5].style.display = "none";
+      img[6].style.display = "block";
+      mensagemPerdeu();
+      resetarImagens();
+      resetarContador();
+      break;
+    default:
+      break;
   }
 };
 
