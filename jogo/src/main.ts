@@ -71,9 +71,11 @@ const verificarValoreExistes = () => {
   atualizarContadorImagens();
 };
 
+
 const aparecerImagem1 = () => {
   img[0].style.display = "block"
 }
+
 
 const resetarImagens = () => {
    for (let j = 2; j < img.length; j++) {
