@@ -17,6 +17,7 @@ const meuObjeto: Palavras = {
   palavra4: "arroz",
   palavra5: "ovo",
   palavra6: "maca",
+  
 };
 
 let receberValor: string = " "
@@ -92,9 +93,8 @@ const mensagemPerdeu = () => {
     title: "Você consegue fazer <br> melhor 😞",
     text: "Tente novamente",
   });
-  
-  
 }
+
 
 const atualizarContadorImagens = () => {
   if (!valorExiste) {
