@@ -53,28 +53,27 @@ const DicaAoUsuario = () => {
 
 DicaAoUsuario();
 
-const botao = document.querySelector("button");
-const input = document.querySelector("input") as HTMLInputElement;
+
+
 const img = document.querySelectorAll(`img`);
 let contador = 0;
 let valorExiste = false;
+let obterValorBotao: string
+
 const verificarValoreExistes = () => {
-  const meuInputValorString = input.value;
   for (let j = 0; j < array.length; j++) {
-    if (meuInputValorString.includes(array[j])) {
+    if (obterValorBotao.includes(array[j])) {
       console.log(`o valor existe`);
       valorExiste = true;
       break;
     }
   }
-  atualizarContadorImagens()
-  
+  atualizarContadorImagens();
 };
 
 const aparecerImagem1 = () => {
   img[0].style.display = "block"
 }
-
 
 const resetarImagens = () => {
    for (let j = 2; j < img.length; j++) {
@@ -136,14 +135,11 @@ const atualizarContadorImagens = () => {
 };
 
 
-botao?.addEventListener("click", () => {
-  verificarValoreExistes();
-})
-
-const botoes = document.querySelectorAll(`button`)
-  botoes.forEach(botao => {
-    botao.addEventListener("click", () => {
-      const obterValorBotao = botao.value
-      console.log(`O botao clicado foi ${obterValorBotao}`)
-    })
+const botoes = document.querySelectorAll(`button`); // seleciona todos os botoes
+botoes.forEach((botao) => {
+  botao.addEventListener("click", () => {
+    obterValorBotao = botao.value;
+    verificarValoreExistes();
+    console.log(`O botao clicado foi ${obterValorBotao}`);
   });
+});
