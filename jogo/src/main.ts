@@ -100,7 +100,7 @@ const atualizarContadorImagens = () => {
     ++contador;
     console.log(contador);
   }
-
+  
   switch (contador) {
     case 1:
       img[0].style.display = "none";
