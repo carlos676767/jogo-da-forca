@@ -138,5 +138,12 @@ const atualizarContadorImagens = () => {
 
 botao?.addEventListener("click", () => {
   verificarValoreExistes();
-});
+})
 
+const botoes = document.querySelectorAll(`button`)
+  botoes.forEach(botao => {
+    botao.addEventListener("click", () => {
+      const obterValorBotao = botao.value
+      console.log(`O botao clicado foi ${obterValorBotao}`)
+    })
+  });
