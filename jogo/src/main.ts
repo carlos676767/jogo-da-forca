@@ -138,7 +138,7 @@ const atualizarContadorImagens = () => {
 
 
 
-const botoes = document.querySelectorAll(`button`);
+const botoes = document.querySelectorAll("button");
 botoes.forEach((botao) => {
   const colocarAudioNoBotao = () => {
     const esteAudioVaiNoBotao = new Audio("audio/audiobotao.mp3");
