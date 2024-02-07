@@ -141,8 +141,7 @@ const adicionarAudiooBody = () => {
   const novoAudio = new Audio("audio/somDefundo.mp3");
   const obterBody = document.body;
   obterBody.appendChild(novoAudio);
-  novoAudio.autoplay
-
+  novoAudio.autoplay = true
 };
 
 adicionarAudiooBody()
