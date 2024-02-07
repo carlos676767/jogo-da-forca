@@ -137,11 +137,17 @@ const atualizarContadorImagens = () => {
 };
 
 
-const botoes = document.querySelectorAll(`button`); // seleciona todos os botoes
+
+const botoes = document.querySelectorAll(`button`);
 botoes.forEach((botao) => {
+  const colocarAudioNoBotao = () => {
+    const esteAudioVaiNoBotao = new Audio("audio/audiobotao.mp3");
+    botao.appendChild(esteAudioVaiNoBotao);
+    esteAudioVaiNoBotao.play();
+  };
   botao.addEventListener("click", () => {
     obterValorBotao = botao.value;
     verificarValoreExistes();
-    console.log(`O botao clicado foi ${obterValorBotao}`);
+    colocarAudioNoBotao();
   });
 });
