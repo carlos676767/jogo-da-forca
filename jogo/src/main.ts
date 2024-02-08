@@ -59,10 +59,14 @@ const img = document.querySelectorAll(`img`);
 let contador = 0;
 let valorExiste = false;
 let obterValorBotao: string
-
+let contarPalavrasCertas: number = 0
 const verificarValoreExistes = () => {
   for (let j = 0; j < array.length; j++) {
     if (obterValorBotao.includes(array[j])) {
+      ++contarPalavrasCertas;
+      if (contarPalavrasCertas === array.length) {
+        
+      }
       console.log(`o valor existe`);
       valorExiste = true;
       break;
@@ -159,3 +163,4 @@ botoes.forEach((botao) => {
     colocarAudioNoBotao();
   });
 });
+
