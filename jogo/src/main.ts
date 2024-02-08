@@ -64,9 +64,9 @@ const resetarContadorPalavras = () => {
 
 const alertaVencedor = () => {
   Swal.fire({
-    title: "Prabens!",
-    text: "*Parabéns pela vitória! Você é um campeão!🏆🎉",
-    imageUrl: "https://unsplash.it/400/200",
+    title: "Parabens!",
+    text: "Parabéns pela vitória! Você é um campeão!🏆🎉",
+    imageUrl: "https://img.freepik.com/vetores-gratis/cartao-de-trofeu-pixelizado-com-letras_603843-3689.jpg?w=740&t=st=1707435155~exp=1707435755~hmac=0100cd7573db7379506a3f195b515f455aea449b11187252c802d427555c3980",
     imageWidth: 400,
     imageHeight: 200,
     imageAlt: "Custom image",
