@@ -1,4 +1,4 @@
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 type Palavras = {
   palavra1: string;
@@ -17,10 +17,9 @@ const meuObjeto: Palavras = {
   palavra4: "arroz",
   palavra5: "ovo",
   palavra6: "maca",
-  
 };
 
-let receberValor: string = " "
+let receberValor: string = " ";
 
 const percorrerEsorteia = () => {
   const chaves = Object.keys(meuObjeto);
@@ -53,64 +52,74 @@ const DicaAoUsuario = () => {
 
 DicaAoUsuario();
 
-
-
 const img = document.querySelectorAll(`img`);
 let contador = 0;
 let valorExiste = false;
-let obterValorBotao: string
-let contarPalavrasCertas: number = 0
+let obterValorBotao: string;
+let contarPalavrasCertas: number = 0;
+
 const resetarContadorPalavras = () => {
-  contarPalavrasCertas = 0
-}
+  contarPalavrasCertas = 0;
+};
+
+const alertaVencedor = () => {
+  Swal.fire({
+    title: "Prabens!",
+    text: "*Parabéns pela vitória! Você é um campeão!🏆🎉",
+    imageUrl: "https://unsplash.it/400/200",
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: "Custom image",
+  });
+};
 
 const verificarValoreExistes = () => {
   for (let j = 0; j < array.length; j++) {
     if (obterValorBotao.includes(array[j])) {
       ++contarPalavrasCertas;
-      console.log(`palavras certas ${contarPalavrasCertas}`);
-      if (contarPalavrasCertas === array.length) {
-        resetarContadorPalavras();
-        resetarImagens();
-      }
+      const vencerPartida = () => {
+        if (contarPalavrasCertas === array.length) {
+          resetarContadorPalavras();
+          resetarImagens();
+          alertaVencedor();
+        }
+      };
+      vencerPartida();
       valorExiste = true;
     }
   }
   atualizarContadorImagens();
 };
 
-
 const aparecerImagem1 = () => {
-  img[0].style.display = "block"
-}
-
+  img[0].style.display = "block";
+};
 
 const resetarImagens = () => {
-   for (let j = 2; j < img.length; j++) {
-    img[j].style.display = "none"
-    aparecerImagem1()
+  for (let j = 2; j < img.length; j++) {
+    img[j].style.display = "none";
+    aparecerImagem1();
     console.log(img[j]);
-   }
-}
+  }
+};
 
 const resetarContador = () => {
-  contador = 0
-}
+  contador = 0;
+};
 
 const mensagemPerdeu = () => {
   Swal.fire({
     title: "Você consegue fazer <br> melhor 😞",
     text: "Tente novamente",
   });
-}
-
+};
 
 const atualizarContadorImagens = () => {
   if (!valorExiste) {
     ++contador;
     console.log(`palavras que nao existem ${contador}`);
   }
-  
+
   switch (contador) {
     case 1:
       img[0].style.display = "none";
@@ -144,15 +153,14 @@ const atualizarContadorImagens = () => {
   }
 };
 
-
 const adicionarAudiooBody = () => {
   const novoAudio = new Audio("audio/somDefundo.mp3");
   const obterBody = document.body;
   obterBody.appendChild(novoAudio);
-  novoAudio.autoplay = true
+  novoAudio.autoplay = true;
 };
 
-adicionarAudiooBody()
+adicionarAudiooBody();
 
 const botoes = document.querySelectorAll("button");
 botoes.forEach((botao) => {
@@ -167,4 +175,3 @@ botoes.forEach((botao) => {
     colocarAudioNoBotao();
   });
 });
-
