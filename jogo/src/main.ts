@@ -60,16 +60,20 @@ let contador = 0;
 let valorExiste = false;
 let obterValorBotao: string
 let contarPalavrasCertas: number = 0
+const resetarContadorPalavras = () => {
+  contarPalavrasCertas = 0
+}
+
 const verificarValoreExistes = () => {
   for (let j = 0; j < array.length; j++) {
     if (obterValorBotao.includes(array[j])) {
       ++contarPalavrasCertas;
+      console.log(`palavras certas ${contarPalavrasCertas}`);
       if (contarPalavrasCertas === array.length) {
-        
+        resetarContadorPalavras();
+        resetarImagens();
       }
-      console.log(`o valor existe`);
       valorExiste = true;
-      break;
     }
   }
   atualizarContadorImagens();
@@ -104,7 +108,7 @@ const mensagemPerdeu = () => {
 const atualizarContadorImagens = () => {
   if (!valorExiste) {
     ++contador;
-    console.log(contador);
+    console.log(`palavras que nao existem ${contador}`);
   }
   
   switch (contador) {
