@@ -27,6 +27,7 @@ const percorrerEsorteia = () => {
   const obter = meuObjeto[sorteio];
   receberValor = obter;
 };
+
 percorrerEsorteia();
 
 const array = receberValor.split("");
@@ -73,6 +74,9 @@ const alertaVencedor = () => {
   });
 };
 
+const reiniciarApagina = () => {
+  location.reload()
+}
 const verificarValoreExistes = () => {
   for (let j = 0; j < array.length; j++) {
     if (obterValorBotao.includes(array[j])) {
@@ -80,8 +84,8 @@ const verificarValoreExistes = () => {
       const vencerPartida = () => {
         if (contarPalavrasCertas === array.length) {
           resetarContadorPalavras();
-          resetarImagens();
           alertaVencedor();
+          reiniciarApagina()
         }
       };
       vencerPartida();
@@ -89,18 +93,6 @@ const verificarValoreExistes = () => {
     }
   }
   atualizarContadorImagens();
-};
-
-const aparecerImagem1 = () => {
-  img[0].style.display = "block";
-};
-
-const resetarImagens = () => {
-  for (let j = 2; j < img.length; j++) {
-    img[j].style.display = "none";
-    aparecerImagem1();
-    console.log(img[j]);
-  }
 };
 
 const resetarContador = () => {
@@ -145,8 +137,8 @@ const atualizarContadorImagens = () => {
       img[5].style.display = "none";
       img[6].style.display = "block";
       mensagemPerdeu();
-      resetarImagens();
       resetarContador();
+      reiniciarApagina()
       break;
     default:
       break;
