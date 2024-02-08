@@ -85,7 +85,7 @@ const verificarValoreExistes = () => {
         if (contarPalavrasCertas === array.length) {
           resetarContadorPalavras();
           alertaVencedor();
-          reiniciarApagina()
+          reiniciarApagina();
         }
       };
       vencerPartida();
@@ -112,6 +112,7 @@ const atualizarContadorImagens = () => {
     console.log(`palavras que nao existem ${contador}`);
   }
 
+  
   switch (contador) {
     case 1:
       img[0].style.display = "none";
