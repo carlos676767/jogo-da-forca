@@ -75,8 +75,12 @@ const alertaVencedor = () => {
 };
 
 const reiniciarApagina = () => {
-  location.reload()
+  setTimeout(() => {
+    location.reload()
+  }, 7000);  
 }
+
+
 const verificarValoreExistes = () => {
   for (let j = 0; j < array.length; j++) {
     if (obterValorBotao.includes(array[j])) {
@@ -85,7 +89,8 @@ const verificarValoreExistes = () => {
         if (contarPalavrasCertas === array.length) {
           resetarContadorPalavras();
           alertaVencedor();
-          reiniciarApagina();
+          reiniciarApagina()
+        
         }
       };
       vencerPartida();
@@ -139,7 +144,7 @@ const atualizarContadorImagens = () => {
       img[6].style.display = "block";
       mensagemPerdeu();
       resetarContador();
-      reiniciarApagina()
+      reiniciarApagina();
       break;
     default:
       break;
