@@ -7,6 +7,7 @@ type Palavras = {
   palavra4: string;
   palavra5: string;
   palavra6: string;
+  palavra7: string;
   [key: string]: string;
 };
 
@@ -17,6 +18,7 @@ const meuObjeto: Palavras = {
   palavra4: "arroz",
   palavra5: "ovo",
   palavra6: "maca",
+  palavra7: "carro", 
 };
 
 let receberValor: string = " ";
@@ -48,6 +50,8 @@ const DicaAoUsuario = () => {
     texto.textContent = "DICA; Redondo e cabe na boca";
   } else if (copiarArray.includes("maca")) {
     texto.textContent = "DICA; e vermelho";
+  }else if (copiarArray.includes("carro")) {
+    texto.textContent = "DICA; tem 4 portas";
   }
 };
 
@@ -79,9 +83,6 @@ const reiniciarApagina = () => {
     location.reload()
   }, 5000);  
 }
-
-
-
 
 const verificarValoreExistes = () => {
   valorExiste = false
