@@ -12,13 +12,13 @@ type Palavras = {
 };
 
 const meuObjeto: Palavras = {
-  palavra1: "banana",
+  palavra1: "gato",
   palavra2: "uva",
-  palavra3: "abacate",
-  palavra4: "arroz",
-  palavra5: "ovo",
-  palavra6: "maca",
-  palavra7: "carro", 
+  palavra3: "dado",
+  palavra4: "vaso",
+  palavra5: "colher",
+  palavra6: "pinho",
+  palavra7: "pincel", 
 };
 
 let receberValor: string = " ";
@@ -38,20 +38,20 @@ let texto = document.querySelector("p") as HTMLParagraphElement;
 
 const DicaAoUsuario = () => {
   const copiarArray = array.slice().join("");
-  if (copiarArray.includes("banana")) {
-    texto.textContent = "DICA; Fruta amarela";
+  if (copiarArray.includes("gato")) {
+    texto.textContent = "DICA; animal";
   } else if (copiarArray.includes("uva")) {
     texto.textContent = "DICA; E roxa(o)";
-  } else if (copiarArray.includes("abacate")) {
-    texto.textContent = "DICA;E algo verde que se come";
-  } else if (copiarArray.includes("arroz")) {
-    texto.textContent = "DICA; E um grao";
-  } else if (copiarArray.includes("ovo")) {
-    texto.textContent = "DICA; Redondo e cabe na boca";
-  } else if (copiarArray.includes("maca")) {
-    texto.textContent = "DICA; e vermelho";
-  }else if (copiarArray.includes("carro")) {
-    texto.textContent = "DICA; tem 4 portas";
+  } else if (copiarArray.includes("dado")) {
+    texto.textContent = "DICA; tem 6 numeros";
+  } else if (copiarArray.includes("vaso")) {
+    texto.textContent = "DICA; banheiro";
+  } else if (copiarArray.includes("colher")) {
+    texto.textContent = "DICA; tem na cozinha";
+  } else if (copiarArray.includes("Vinho")) {
+    texto.textContent = "DICA; bebida";
+  }else if (copiarArray.includes("pincel")) {
+    texto.textContent = "DICA; pintar";
   }
 };
 
@@ -108,6 +108,7 @@ const verificarValoreExistes = () => {
 const atualizarContadorImagens = () => {
   if (valorExiste === false) {
     ++contador;
+    
     console.log(`palavras que nao existem ${contador}`);
   }
   switch (contador) {
@@ -150,9 +151,19 @@ const resetarContador = () => {
 
 const mensagemPerdeu = () => {
   Swal.fire({
-    title: "Você consegue fazer <br> melhor 😞",
-    text: "Tente novamente",
+    title: "Oh não! Você perdeu!",
+    text: "Mas não desanime, continue tentando!",
+    imageUrl:
+    "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2FpajlsYnJ0Z2N5bTh3ZGp1bW00dnR3aXdxeXBlb2xqZHMwc3lsaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gJoBlYkfWu3Py81V23/giphy.gif",
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: "Imagem personalizada",
   });
+  const audioGameOver = () => {
+    const novoAudio = new Audio("audio/audiogameover.mp3");
+    novoAudio.play();
+  };
+  audioGameOver();
 };
 
 
@@ -172,10 +183,12 @@ botoes.forEach((botao) => {
     const esteAudioVaiNoBotao = new Audio("audio/audiobotao.mp3");
     botao.appendChild(esteAudioVaiNoBotao);
     esteAudioVaiNoBotao.play();
-    console.log(botao)
+    console.log(botao);
   };
   botao.addEventListener("click", () => {
     obterValorBotao = botao.value;
+    botao.disabled = true;
+    botao.classList.add("cor-botao-red")
     verificarValoreExistes();
     colocarAudioNoBotao();
   });
