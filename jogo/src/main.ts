@@ -77,47 +77,38 @@ const alertaVencedor = () => {
 const reiniciarApagina = () => {
   setTimeout(() => {
     location.reload()
-  }, 7000);  
+  }, 5000);  
 }
 
 
+
+
 const verificarValoreExistes = () => {
+  valorExiste = false
   for (let j = 0; j < array.length; j++) {
     if (obterValorBotao.includes(array[j])) {
       ++contarPalavrasCertas;
-      const vencerPartida = () => {
-        if (contarPalavrasCertas === array.length) {
-          resetarContadorPalavras();
-          alertaVencedor();
-          reiniciarApagina()
-        
-        }
-      };
-      vencerPartida();
-      valorExiste = true;
+      valorExiste = true; 
+      console.log(valorExiste);
     }
   }
   atualizarContadorImagens();
-};
-
-const resetarContador = () => {
-  contador = 0;
-};
-
-const mensagemPerdeu = () => {
-  Swal.fire({
-    title: "Você consegue fazer <br> melhor 😞",
-    text: "Tente novamente",
-  });
+  const vencerPartida = () => {
+    if (contarPalavrasCertas === array.length) {
+      resetarContadorPalavras();
+      alertaVencedor();
+      reiniciarApagina();
+    }
+  };
+  valorExiste = false
+  vencerPartida(); 
 };
 
 const atualizarContadorImagens = () => {
-  if (!valorExiste) {
+  if (valorExiste === false) {
     ++contador;
     console.log(`palavras que nao existem ${contador}`);
   }
-
-  
   switch (contador) {
     case 1:
       img[0].style.display = "none";
@@ -151,6 +142,20 @@ const atualizarContadorImagens = () => {
   }
 };
 
+
+const resetarContador = () => {
+  contador = 0;
+};
+
+const mensagemPerdeu = () => {
+  Swal.fire({
+    title: "Você consegue fazer <br> melhor 😞",
+    text: "Tente novamente",
+  });
+};
+
+
+
 const adicionarAudiooBody = () => {
   const novoAudio = new Audio("audio/somDefundo.mp3");
   const obterBody = document.body;
@@ -166,6 +171,7 @@ botoes.forEach((botao) => {
     const esteAudioVaiNoBotao = new Audio("audio/audiobotao.mp3");
     botao.appendChild(esteAudioVaiNoBotao);
     esteAudioVaiNoBotao.play();
+    console.log(botao)
   };
   botao.addEventListener("click", () => {
     obterValorBotao = botao.value;
