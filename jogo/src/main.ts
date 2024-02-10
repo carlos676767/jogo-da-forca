@@ -17,7 +17,7 @@ const meuObjeto: Palavras = {
   palavra3: "dado",
   palavra4: "vaso",
   palavra5: "colher",
-  palavra6: "pinho",
+  palavra6: "vinho",
   palavra7: "pincel", 
 };
 
@@ -48,7 +48,7 @@ const DicaAoUsuario = () => {
     texto.textContent = "DICA; banheiro";
   } else if (copiarArray.includes("colher")) {
     texto.textContent = "DICA; tem na cozinha";
-  } else if (copiarArray.includes("Vinho")) {
+  } else if (copiarArray.includes("vinho")) {
     texto.textContent = "DICA; bebida";
   }else if (copiarArray.includes("pincel")) {
     texto.textContent = "DICA; pintar";
@@ -78,6 +78,10 @@ const alertaVencedor = () => {
   });
 };
 
+const resultado = document.getElementById("mostrar")  as HTMLParagraphElement
+console.log(resultado);
+
+
 const reiniciarApagina = () => {
   setTimeout(() => {
     location.reload()
@@ -90,7 +94,7 @@ const verificarValoreExistes = () => {
     if (obterValorBotao.includes(array[j])) {
       ++contarPalavrasCertas;
       valorExiste = true; 
-      console.log(valorExiste);
+      resultado.textContent = `letra correta, faltam ${array.length - contarPalavrasCertas}.`;
     }
   }
   atualizarContadorImagens();
@@ -108,7 +112,6 @@ const verificarValoreExistes = () => {
 const atualizarContadorImagens = () => {
   if (valorExiste === false) {
     ++contador;
-    
     console.log(`palavras que nao existem ${contador}`);
   }
   switch (contador) {
